@@ -140,4 +140,3 @@ lprompt '[]' $BR_BRIGHT_BLACK $PR_BRIGHT_BLACK $PR_BRIGHT_BLACK $PR_BRIGHT_RED $
 rprompt '()' $BR_BRIGHT_BLACK $PR_WHITE
 
 
-source ~/perl5/perlbrew/etc/bashrc
