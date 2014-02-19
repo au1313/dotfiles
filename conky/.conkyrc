@@ -59,7 +59,7 @@ ${cpugraph cpu4 20,70 444444 aaaaaa -t}
 
 ${font Byte Police:regular:size=10}Net$font $hr
 wlan0: ${wireless_essid wlan0} ${if_up wlan0}${wireless_link_bar wlan0}
-${downspeedgraph wlan0 20,145 444444 777777} ${upspeedgraph wlan0 20,145 444444 77777}${endif}
+${downspeedgraph wlan0 20,145 444444 777777} ${upspeedgraph wlan0 20,145 444444 777777}${endif}
 eth0: ${downspeedf eth0}KBs down, ${upspeedf eth0}KBs up
 ${downspeedgraph eth0 20,145 444444 777777} ${upspeedgraph eth0 20,145 444444 777777}
 External IP: ${execi 120 curl http://xotl.org/ip.php}
@@ -72,6 +72,11 @@ ${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ KDET win
 ${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ KDET wind_dir 30} \
 ${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ KDET cloud_cover 30}
 ${font Ubuntu Mono:regular:size=8}Updated ${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ KDET last_update 30} UTC
+
+${font Byte Police:regular:size=10}Now Playing$font $hr
+${font Ubuntu Mono:italic:size=10}${exec ~/bin/amarok_nowplaying.py -t}$font
+By ${exec ~/bin/amarok_nowplaying.py -a}
+${font Ubuntu Mono:regular:size=8}From "${exec ~/bin/amarok_nowplaying.py -l}"$font
 
 ${font Byte Police:regular:size=10}Top$font $hr
 ${color #797979}${font Ubuntu Mono:size=8}${top pid 1} ${top name 1} ${top cpu 1}% ${top mem 1}% ${top time 1}
